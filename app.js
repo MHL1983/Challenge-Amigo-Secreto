@@ -1,35 +1,58 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-let listaNombres = [];
+// Variables globales
+let amigos = [];
+const inputAmigo = document.querySelector("#amigo");
+const lista = document.querySelector("#listaAmigos");
+const resultado = document.querySelector("#resultado");
+const btnReiniciar = document.querySelector("#reiniciar");
 
-function agregar() {
-    let nombre = document.getElementById("amigo").value;
-    if (nombre != "") {
-        listaNombres.push(nombre);
-        actualizar();
-    } else {
-        alert("Ingrese un nombre válido.");
+function agregarAmigo() {
+    const nombre = inputAmigo.value.trim();
+
+    if (!nombre) {
+        alert("Por favor, inserte un nombre.");
+        return;
     }
-    document.getElementById("amigo").value = "";
+
+    if (amigos.includes(nombre)) {
+        alert("Este nombre ya está en la lista.");
+        return;
+    }
+
+    amigos.push(nombre);
+    actualizarLista();
+    inputAmigo.value = "";
 }
 
-function actualizar() {
-    let nombres = document.querySelector("#listaAmigos");
-    nombres.innerHTML = "";
-    for (let i = 0; i < listaNombres.length; i++) {
-        let nombre = listaNombres[i];
-        let li = document.createElement("li");
-        li.textContent = nombre;
-        nombres.appendChild(li);
-    }
+function actualizarLista() {
+    lista.innerHTML = "";
+    amigos.forEach(amigo => {
+        const listItem = document.createElement("li");
+        listItem.textContent = amigo;
+        lista.appendChild(listItem);
+    });
 }
 
-function sortear() {
-    if (listaNombres.length == 0) {
-        alert('No hay amigos para sortear.');
-    } else {
-        let resultado = document.querySelector("#resultado");
-        let amigoSecreto = listaNombres[Math.floor(Math.random() * listaNombres.length)];
-        resultado.innerHTML = `El amigo secreto sorteado es: ${amigoSecreto}`;
-        document.querySelector("#listaAmigos").style.display = "none";
+function sortearAmigo() {
+    if (amigos.length < 2) {
+        alert("Debe haber al menos 2 amigos en la lista.");
+        return;
     }
+
+    const amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
+    resultado.innerHTML = `El amigo secreto es: <strong>${amigoSorteado}</strong>`;
+
+    // Activar botón de reinicio al finalizar el sorteo
+    btnReiniciar.removeAttribute("disabled");
+    btnReiniciar.classList.add("activo");
+}
+
+function reiniciarJuego() {
+    amigos = [];
+    lista.innerHTML = "";
+    resultado.innerHTML = "";
+    inputAmigo.value = "";
+
+    // Deshabilitar nuevamente el botón de reinicio
+    btnReiniciar.setAttribute("disabled", "true");
+    btnReiniciar.classList.remove("activo");
 }
