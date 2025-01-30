@@ -4,6 +4,7 @@ const inputAmigo = document.querySelector("#amigo");
 const lista = document.querySelector("#listaAmigos");
 const resultado = document.querySelector("#resultado");
 const btnReiniciar = document.querySelector("#reiniciar");
+const btnSortear = document.querySelector(".button-draw");
 
 function agregarAmigo() {
     const nombre = inputAmigo.value.trim();
@@ -41,7 +42,7 @@ function sortearAmigo() {
     const amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
     resultado.innerHTML = `El amigo secreto es: <strong>${amigoSorteado}</strong>`;
 
-    // Activar botón de reinicio al finalizar el sorteo
+    btnSortear.disabled = true;
     btnReiniciar.removeAttribute("disabled");
     btnReiniciar.classList.add("activo");
 }
@@ -52,7 +53,7 @@ function reiniciarJuego() {
     resultado.innerHTML = "";
     inputAmigo.value = "";
 
-    // Deshabilitar nuevamente el botón de reinicio
     btnReiniciar.setAttribute("disabled", "true");
     btnReiniciar.classList.remove("activo");
+    btnSortear.disabled = false;
 }

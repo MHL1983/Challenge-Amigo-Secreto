@@ -152,7 +152,8 @@ ul {
 }
 
 /* Estado deshabilitado del botón */
-.button-restart:disabled {
+.button-restart:disabled, 
+.button-draw:disabled {
     background: var(--color-button-disabled);
     cursor: not-allowed;
 }
