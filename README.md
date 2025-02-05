@@ -1,24 +1,20 @@
-<h1>Desafío Amigo Secreto 🎁</h1>
+# Desafío Amigo Secreto
 
-<p>Esta es una herramienta web sencilla que facilita la organización de sorteos de amigo secreto. Introduce los nombres de los participantes, presiona un botón y descubre fácilmente a quién le darás un regalo.</p>
+El **Desafío Amigo Secreto** es una herramienta web sencilla que facilita la organización de sorteos de amigo secreto. Permite introducir los nombres de los participantes, generar combinaciones aleatorias y presentar los resultados de manera clara y directa.
 
-<h2>Funciones Principales 📃</h2>
+## Funcionalidades principales
 
-<ul>
-<li>Permite agregar los nombres de los participantes a una lista.</li>
-<li>Valida que los nombres sean únicos y no estén vacíos.</li>
-<li>Genera combinaciones de amigo secreto de forma aleatoria.</li>
-<li>Presenta los resultados directamente en la pantalla.</li>
-</ul>
+- Permite agregar los nombres de los participantes a una lista.
+- Valida que los nombres sean únicos y no estén vacíos.
+- Genera combinaciones de amigo secreto de forma aleatoria y equitativa.
+- Muestra los resultados directamente en la pantalla.
 
-<h2>Tecnologías Utilizadas 🛠️</h2>
+## Tecnologías utilizadas
 
-<ul>
-<li><strong>HTML5</strong>: Para estructurar el contenido.</li>
-<li><strong>CSS3</strong>: Para el diseño visual y estética.</li>
-<li><strong>JavaScript</strong>: Para las funcionalidades y la lógica interactiva.</li>
-</ul>
+- **HTML5:** Para la estructura del contenido.
+- **CSS3:** Para el diseño visual y la estética.
+- **JavaScript:** Para las funcionalidades y la lógica interactiva.
 
-<h2>Requisitos del Sistema 🚀</h2>
+## Requisitos del sistema
 
-<p>Este proyecto no requiere instalaciones especiales. Simplemente abre el archivo en cualquier navegador web moderno y estará listo para usar.</p>
+- **No se requiere instalación adicional.** Basta con abrir el archivo en cualquier navegador web moderno para comenzar a utilizar la herramienta.
